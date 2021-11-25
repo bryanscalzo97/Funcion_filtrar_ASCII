@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio Widergy - Bryan Scalzo</title>
+  </head>
+  <body>
+    <script>
+      //numeros representa la cadena de numeros de ASCII
+      var numeros = [1, 2, 3, 4, 5, 8, 10, 32];
+      //No aplico el toUpperCase como en el ejemplo del ejercicio.
+      //Esto porque no tendria sentido ya que son numeros, se lo sumo a los condicionales en el if
+      var i = 0;
+      var result = [];
+
+      function FormatString(numeros) {
+        while (i < numeros.length) {
+          //Condiciones
+          if (
+            //Letras mayúsculas
+            (numeros[i] >= 65 && numeros[i] <= 90) ||
+            //Numeros
+            (numeros[i] >= 65 && numeros[i] <= 90) ||
+            //Espacio en blanco
+            numeros[i] == 32 ||
+            //guion
+            numeros[i] == 45 ||
+            //Guion bajo
+            numeros[i] == 95
+          ) {
+            result.push(numeros[i]);
+          }
+          i++;
+        }
+
+        //verifico que se haya cumplido alguna de las condiciones permitidas o retorno "NA"
+        if (result.length === 0) {
+          console.log("NA");
+        } else {
+          console.log(result);
+        }
+      }
+
+      FormatString(numeros);
+    </script>
+  </body>
+</html>
